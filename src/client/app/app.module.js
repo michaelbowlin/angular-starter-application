@@ -7,8 +7,8 @@
         'app.core',
         'app.widgets',
         'app.dashboard',
+        'app.friend',
         'app.layout',
-        'highcharts-ng',
         'ui.bootstrap'
 
     ]);
