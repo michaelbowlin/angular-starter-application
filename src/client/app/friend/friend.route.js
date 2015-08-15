@@ -16,13 +16,11 @@
                 state: 'friend',
                 config: {
                     url: '/',
-                    templateUrl: 'app/friend/friend.html',
-                    controller: 'Friend',
-                    controllerAs: 'vm',
+                    template: '<friend-maker></friend-maker>',
                     title: 'friend',
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-contact"></i><span>friend</span>'
+                        content: '<i class="fa fa-dashboard"></i><span>Friend</span>'
                     }
                 }
             }
