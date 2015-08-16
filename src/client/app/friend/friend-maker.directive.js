@@ -15,7 +15,26 @@
     }
 
     /* @ngInject */
-    function friendController() {
+    function friendController($scope) {
+
+            $scope.user1 = {
+                name: 'Luke Skywalker',
+                address: {
+                    street: 'PO Box 1234',
+                    city: 'Denver',
+                    state: 'Colorado'
+                },
+                friends: ['Kepler','Chatka','Kaiser']
+            }
+            $scope.user2 = {
+                name: 'Luke Bowlin',
+                address: {
+                    street: 'PO Box 1234',
+                    city: 'Denver',
+                    state: 'Colorado'
+                },
+                friends: ['Kepler','Chatka','Kaiser']
+            }
 
     }
 })();
