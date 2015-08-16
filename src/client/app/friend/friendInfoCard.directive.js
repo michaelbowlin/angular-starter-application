@@ -9,7 +9,7 @@
         return {
             restrict: 'E',
             templateUrl: 'app/friend/friendInfoCard.html',
-            //controllerAs: 'vm',
+            controllerAs: 'vm',
             scope: {
                 user: '='
             },
@@ -45,12 +45,13 @@
     //    }
     //
     //    /* Knight Me */
-    //    var knightMe = function(user) {
+    //    function knightMe(user) {
+    //        alert('asdf');
     //        user.rank = "knight";
     //    }
     //
     //    /* Collapsed */
-    //    var collapse = function(){
+    //    function collapse(){
     //        vm.collapsed = !vm.collapsed
     //
     //    }
