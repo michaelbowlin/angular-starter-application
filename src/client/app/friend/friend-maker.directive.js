@@ -24,8 +24,8 @@
                 city: 'Denver',
                 state: 'Colorado'
             },
-            friends: ['Kepler','Chatka','Kaiser']
-        }
+            friends: ['Kepler', 'Chatka', 'Kaiser']
+        };
         $scope.user2 = {
             name: 'Luke Bowlin',
             address: {
@@ -33,9 +33,7 @@
                 city: 'Denver',
                 state: 'Colorado'
             },
-            friends: ['Kepler','Chatka','Kaiser']
-        }
-
-
+            friends: ['Kepler', 'Chatka', 'Kaiser']
+        };
     }
 })();

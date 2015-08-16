@@ -24,13 +24,13 @@
 
         /* Knight Me */
         $scope.knightMe = function(user) {
-            user.rank = "knight";
-        }
+            user.rank = 'knight';
+        };
 
         /* Collapsed */
-        $scope.collapse = function(){
-            $scope.collapsed = !$scope.collapsed
-        }
+        $scope.collapse = function() {
+            $scope.collapsed = !$scope.collapsed;
+        };
     }
 
     //function friendController() {
