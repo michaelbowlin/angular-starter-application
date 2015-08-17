@@ -61,11 +61,6 @@
                         ]
                     };
 
-                    //console.log(newUser);
-                    persons.people.push(newUser);
-                    console.log(persons);
-
-
                     var dfd = $q.defer();
                     dfd.resolve(persons);
 
