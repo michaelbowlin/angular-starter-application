@@ -36,11 +36,6 @@
                     // Put the object into storage
                     localStorage.setItem('peoples', JSON.stringify(data));
 
-                    // Retrieve the object from storage
-                    //var retrievedObject = localStorage.getItem(data);
-
-                    //var lsData = JSON.parse(retrievedObject);
-                    //console.log('retrievedObject: ', JSON.parse(retrievedObject));
                     // First pull the data from the service
                     vm.personsData = data;
                     // Masonry paint
@@ -50,13 +45,19 @@
         }
 
         function addUser(newUser) {
-            //var newUsers = {};
-            var lsData = JSON.parse(localStorage.getItem('peoples'));
+            var lsData = JSON.parse(localStorage.getItem('peoples')); //TODO: Don't refresh view... just push
+            //var lsDataLength1 = lsData.people.length;
+            //alert(lsDataLength1);
+
             lsData.people.unshift(newUser);
+            //var lsDataLength2 = lsData.people.length;
+            //alert(lsDataLength2);
+
             // Put the object back into storage
             localStorage.setItem('peoples', JSON.stringify(lsData));
             // Refresh the view with the local storage object
             vm.personsData = lsData;
+            lsData = {};
             // Masonry repaint
             masonry();
             resetForm();
@@ -88,13 +89,13 @@
                     jQuery(window).bind('resize', function () {
                         if (!jQuery('#posts').parent().hasClass('container')) {
                             // Resets all widths to 'auto' to sterilize calculations
-                            post_width = jQuery('.post').width() + gutter;
+                            var post_width = jQuery('.post').width() + gutter;
                             jQuery('#posts, body > #grid').css('width', 'auto');
                             // Calculates how many .post elements will actually fit per row. Could this code be cleaner?
-                            posts_per_row = jQuery('#posts').innerWidth() / post_width;
-                            floor_posts_width = (Math.floor(posts_per_row) * post_width) - gutter;
-                            ceil_posts_width = (Math.ceil(posts_per_row) * post_width) - gutter;
-                            posts_width = (ceil_posts_width > jQuery('#posts').innerWidth()) ? floor_posts_width : ceil_posts_width;
+                            var posts_per_row = jQuery('#posts').innerWidth() / post_width;
+                            var floor_posts_width = (Math.floor(posts_per_row) * post_width) - gutter;
+                            var ceil_posts_width = (Math.ceil(posts_per_row) * post_width) - gutter;
+                            var posts_width = (ceil_posts_width > jQuery('#posts').innerWidth()) ? floor_posts_width : ceil_posts_width;
                             if (posts_width == jQuery('.post').width()) {
                                 posts_width = '100%';
                             }
@@ -104,7 +105,7 @@
                         }
 
                     }).trigger('resize');
-                },50);
+                },1000);
             //});
         }
     }
