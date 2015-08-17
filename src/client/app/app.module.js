@@ -8,7 +8,6 @@
         'app.widgets',
         'app.dashboard',
         'app.layout',
-        'highcharts-ng',
         'ui.bootstrap'
 
     ]);
