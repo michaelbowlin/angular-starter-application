@@ -13,22 +13,22 @@
         <form class="form-horizontal">
             <fieldset>
                 <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Firstname</label>
+                    <label for="" class="col-lg-2 control-label">Firstname</label>
                     <div class="col-lg-10">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Firstname">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Firstname" ng-model="user.first">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Lastname</label>
+                    <label for="" class="col-lg-2 control-label">Lastname</label>
                     <div class="col-lg-10">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Lastname">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Lastname" ng-model="user.last">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="textArea" class="col-lg-2 control-label">Personal Blurb</label>
+                    <label for="" class="col-lg-2 control-label">Personal Blurb</label>
                     <div class="col-lg-10">
-                        <textarea class="form-control" rows="3" id="textArea"></textarea>
+                        <textarea class="form-control" rows="3" id="textArea" ng-model="user.blurb"></textarea>
                         <span class="help-block">Just a little about you...</span>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                                             </div>
                                             <div class="panel-body">
                                                 <img src="/app/img/mouse1.jpg" alt=""/>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked=""><span class="circle"></span><span class="check"></span>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="" ng-model="user.img.mouse1"><span class="circle"></span><span class="check"></span>
                                             </div>
                                         </div>
                                     </label>
@@ -64,7 +64,7 @@
                                             </div>
                                             <div class="panel-body">
                                                 <img src="/app/img/mouse2.jpg" alt=""/>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"><span class="circle"></span><span class="check"></span>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option2" ng-model="user.img.mouse2"><span class="circle"></span><span class="check"></span>
                                             </div>
                                         </div>
                                     </label>
@@ -77,7 +77,7 @@
                                             </div>
                                             <div class="panel-body">
                                                 <img src="/app/img/mouse3.jpg" alt=""/>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"><span class="circle"></span><span class="check"></span>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option3"  ng-model="user.img.mouse3"><span class="circle"></span><span class="check"></span>
                                             </div>
                                         </div>
                                     </label>
@@ -90,7 +90,7 @@
                                             </div>
                                             <div class="panel-body">
                                                 <img src="/app/img/mouse4.jpg" alt=""/>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"><span class="circle"></span><span class="check"></span>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option4"  ng-model="user.img.mouse4"><span class="circle"></span><span class="check"></span>
                                             </div>
                                         </div>
                                     </label>
@@ -100,7 +100,7 @@
 
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                        <button type="submit" class="btn btn-large btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-large btn-primary" ng-click='vm.addUser(user)'>Submit</button>
                     </div>
                 </div>
             </fieldset>
