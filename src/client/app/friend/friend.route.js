@@ -15,7 +15,7 @@
             {
                 state: 'friend',
                 config: {
-                    url: '/friend',
+                    url: '/',
                     template: '<friend-maker></friend-maker>',
                     title: 'friend',
                     settings: {

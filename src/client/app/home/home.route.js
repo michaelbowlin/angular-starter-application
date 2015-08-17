@@ -15,7 +15,7 @@
             {
                 state: 'home',
                 config: {
-                    url: '/',
+                    url: '/home',
                     template: '<home></home>',
                     title: 'home',
                     settings: {

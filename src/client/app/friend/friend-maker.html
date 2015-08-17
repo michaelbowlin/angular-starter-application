@@ -1,23 +1,125 @@
 <!-- Header -->
 <header id="header" class="container">
-    <h1>Bootstrap 3 + Masonry 3</h1>
-    <p class="lead">
-        This is deployed with the <code>#grid</code> div fluid (that is, it has no Bootstrap <code>.container</code> class). To make it fixed simply add the <code>.container</code> class to it. Use the media queries in <strong>style.css</strong> to change the grid's post widths and margins.
-    </p>
+    <h1>Friendship Tracker</h1>
+    <!--<p class="lead">-->
+        <!--This is deployed with the <code>#grid</code> div fluid (that is, it has no Bootstrap <code>.container</code> class). To make it fixed simply add the <code>.container</code> class to it. Use the media queries in <strong>style.css</strong> to change the grid's post widths and margins.-->
+    <!--</p>-->
     <hr>
 </header>
 
+<!-- Form -->
+<div class="col-xs-12">
+    <div class="well bs-component">
+        <form class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Firstname</label>
+                    <div class="col-lg-10">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Firstname">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Lastname</label>
+                    <div class="col-lg-10">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Lastname">
+                    </div>
+                </div>
 
-<div id="grid">
-    <div id="posts">
-        <div class="post" ng-repeat="p in vm.personsData.people">
-            <img class="circle" src="/app/img/{{p.img}}" alt="icon">
-            <h4 class="list-group-item-heading">{{p.first}} {{p.last}}</h4>
-            <p class="list-group-item-text">{{p.blurb}}</p>
-        </div>
+                <div class="form-group">
+                    <label for="textArea" class="col-lg-2 control-label">Personal Blurb</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" rows="3" id="textArea"></textarea>
+                        <span class="help-block">Just a little about you...</span>
+                    </div>
+                </div>
+
+                <div class="togglebutton col-lg-10 col-lg-offset-2">
+                    <label>
+                        <input type="checkbox"><span class="toggle"></span> Choose Your Avatar
+                    </label>
+                </div>
+                <br/>
+                <br/>
+                <div class="form-group">
+                            <label class="col-lg-2 control-label"></label>
+                            <div class="col-lg-10 offset-2">
+                                <div class="radio radio-primary col-lg-3 pull-left">
+                                    <label>
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Mouse #1</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <img src="/app/img/mouse1.jpg" alt=""/>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked=""><span class="circle"></span><span class="check"></span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="radio radio-primary col-lg-3 pull-left">
+                                    <label>
+                                        <div class="panel panel-success">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Mouse #2</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <img src="/app/img/mouse2.jpg" alt=""/>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"><span class="circle"></span><span class="check"></span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="radio radio-primary col-lg-3 pull-left">
+                                    <label>
+                                        <div class="panel panel-warning">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Mouse #3</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <img src="/app/img/mouse3.jpg" alt=""/>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"><span class="circle"></span><span class="check"></span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="radio radio-primary col-lg-3 pull-left">
+                                    <label>
+                                        <div class="panel panel-info">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Mouse #4</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <img src="/app/img/mouse4.jpg" alt=""/>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"><span class="circle"></span><span class="check"></span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-large btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
 </div>
 
+<!-- Grid -->
+<div class="col-xs-12">
+    <div id="grid">
+        <div id="posts">
+            <div class="post" ng-repeat="p in vm.personsData.people">
+                <img class="circle" src="/app/img/{{p.img}}" alt="icon">
+                <h4 class="list-group-item-heading">{{p.first}} {{p.last}}</h4>
+                <p class="list-group-item-text">{{p.blurb}}</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     // TODO: Put Masonry into the Bower build
@@ -56,6 +158,6 @@
                 }
 
             }).trigger('resize');
-        },400);
+        },1000);
     });
 </script>
