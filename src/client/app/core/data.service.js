@@ -6,7 +6,8 @@
         .factory('staticService', function ($http, $q) {
 
             return {
-                staticData: function () {
+                staticData: function (newUser) {
+
                     var persons = {
                         people: [
                             {
@@ -59,6 +60,11 @@
                             }
                         ]
                     };
+
+                    //console.log(newUser);
+                    persons.people.push(newUser);
+                    console.log(persons);
+
 
                     var dfd = $q.defer();
                     dfd.resolve(persons);

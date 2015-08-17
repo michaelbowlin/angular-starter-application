@@ -15,7 +15,7 @@
     }
 
     /* @ngInject */
-    function friendController(staticService) {
+    function friendController(staticService, $scope) {
 
         var vm = this;
         vm.init = init;
@@ -37,9 +37,12 @@
 
         function addUser(newUser) {
             var newUsers = {};
-            //var newUser.list = [];
+            newUsers.list = [];
             console.log(newUsers);
-            newUsers.list.push({id: newUser.list.length, text: message});
+            staticService.staticData(newUser)
+                .then(function(newUsers){
+                   console.log(newUsers);
+                });
 
         }
 
