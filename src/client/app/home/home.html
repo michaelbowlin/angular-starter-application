@@ -1,0 +1,24 @@
+<div class="page-header" id="banner">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h1>Material Design</h1>
+            <p class="lead">Based on Google Material design</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="well infobox">
+                <div class="list-group" ng-repeat="p in vm.personsData.people">
+                    <div class="list-group-item">
+                        <div class="row-picture">
+                            <img class="circle" src="/app/img/{{p.img}}" alt="icon">
+                        </div>
+                        <div class="row-content">
+                            <h4 class="list-group-item-heading">{{p.first}} {{p.last}}</h4>
+                            <p class="list-group-item-text">{{p.blurb}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
