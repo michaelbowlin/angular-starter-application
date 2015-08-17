@@ -11,50 +11,43 @@
                     var persons = {
                         people: [
                             {
-                                first : 'Rocky',
-                                last : 'Racoon',
+                                first : 'Dr. Repeater',
                                 img : 'cat2.jpg',
-                                blurb : 'I like mice, yarn and boxes.'
+                                blurb : 'I like mice, yarn and boxes.',
+                                friends: ['Kepler','Chatka','Kaiser']
                             },
                             {
-                                first : 'Tubby',
-                                last : 'Turtle',
+                                first : 'The Infamous Loop',
                                 img : 'cat3.jpg',
                                 blurb : 'I like mice, yarn and boxes.'
                             },
                             {
-                                first : 'Frank',
-                                last : 'Fox',
+                                first : 'RePurrsion',
                                 img : 'cat4.jpg',
                                 blurb : 'I like mice, yarn and boxes.'
                             },
                             {
-                                first : 'Frank',
-                                last : 'Fox',
+                                first : 'Mr. Var',
                                 img : 'cat9.jpg',
                                 blurb : 'I like mice, yarn and boxes.'
                             },
                             {
-                                first : 'Frank',
-                                last : 'Fox',
+                                first : 'Miss Closure',
                                 img : 'cat8.jpg',
                                 blurb : 'I like mice, yarn and boxes.'
                             },
                             {
-                                first : 'Frank',
-                                last : 'Fox',
+                                first : 'Temporal Dead Zone',
                                 img : 'cat7.jpg',
                                 blurb : 'I like mice, yarn and boxes.'
                             },
                             {
-                                first : 'Frank',
-                                last : 'Fox',
+                                first : 'Array-Bian',
                                 img : 'cat6.jpg',
                                 blurb : 'I like mice, yarn and boxes.'
                             },
                             {
-                                first : 'Frank',
-                                last : 'Fox',
+                                first : 'Objectify Meow',
                                 img : 'cat5.jpg',
                                 blurb : 'I like mice, yarn and boxes.'
                             }
