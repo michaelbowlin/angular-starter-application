@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.dashboard', [
+        .module('app.home', [
             'app.core',
             'app.widgets'
         ]);

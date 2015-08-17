@@ -6,7 +6,8 @@
         /* Shared modules */
         'app.core',
         'app.widgets',
-        'app.dashboard',
+        'app.home',
+        'app.friend',
         'app.layout',
         'ui.bootstrap'
 

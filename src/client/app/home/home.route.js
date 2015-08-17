@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.dashboard')
+        .module('app.home')
         .run(appRun);
 
     /* @ngInject */
@@ -13,16 +13,14 @@
     function getStates() {
         return [
             {
-                state: 'dashboard',
+                state: 'home',
                 config: {
                     url: '/',
-                    templateUrl: 'app/dashboard/dashboard.html',
-                    controller: 'Dashboard',
-                    controllerAs: 'vm',
-                    title: 'dashboard',
+                    template: '<home></home>',
+                    title: 'home',
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-dashboard"></i><span>Dashboard</span>'
+                        content: '<i class="fa fa-home"></i><span> Home</span>'
                     }
                 }
             }
