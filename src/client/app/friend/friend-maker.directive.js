@@ -29,7 +29,7 @@
         function network(data) {
             staticService.staticData(data)
                 .then(function(data) {
-                    console.log(data);
+                    vm.personsData = data;
                 });
         }
     }

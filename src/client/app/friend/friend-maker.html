@@ -1,95 +1,61 @@
-<div class="page-header" id="banner">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-            <h1>Material Design</h1>
-            <p class="lead">Based on Google Material design</p>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="well infobox">
-                <div class="list-group">
-                    <div class="list-group-item">
-                        <div class="row-picture">
-                            <img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">
-                        </div>
-                        <div class="row-content">
-                            <h4 class="list-group-item-heading">Tile with avatar</h4>
-                            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus</p>
-                        </div>
-                    </div>
-                 </div>
-                <p><em>Material Design for Bootstrap</em> is a theme for Bootstrap 3 which lets you use the new <a href="http://www.google.com/design/spec/material-design/">Google Material Design</a> in your favorite front-end framework.</p>
-                <p>If you like this project you can support me by donating something on Gittip, starring this repository, or <a href="https://github.com/FezVrasta/bootstrap-material-design/issues">reporting bugs and ideas</a>.</p>
-                <p>Read more about <em>Material Design for Bootstrap</em> <a href="https://github.com/FezVrasta/bootstrap-material-design">at the Github page</a>.</p>
+<!-- Header -->
+<header id="header" class="container">
+    <h1>Bootstrap 3 + Masonry 3</h1>
+    <p class="lead">
+        This is deployed with the <code>#grid</code> div fluid (that is, it has no Bootstrap <code>.container</code> class). To make it fixed simply add the <code>.container</code> class to it. Use the media queries in <strong>style.css</strong> to change the grid's post widths and margins.
+    </p>
+    <hr>
+</header>
 
-                <a href="https://github.com/FezVrasta/bootstrap-material-design/archive/master.zip" class="btn btn-sup btn-material-pink btn-raised">
-                    <img src="demo/imgs/download.png" alt="gittip" height="30">
-                    <span>DOWNLOAD</span>
-                </a>
-                <a href="https://www.gittip.com/FezVrasta/" class="btn btn-sup btn-material-brown">
-                    <img src="demo/imgs/gittip.png" alt="gittip" height="30">
-                    <span>GITTIP</span>
-                </a>
-                <a href="https://github.com/FezVrasta/bootstrap-material-design/issues" class="btn btn-sup btn-material-deeppurple">
-                    <img src="demo/imgs/issue.png" alt="gittip" height="30">
-                    <span>ISSUES</span>
-                </a>
-            </div>
+
+<div id="grid">
+    <div id="posts">
+        <div class="post" ng-repeat="p in vm.personsData.people">
+            <img class="circle" src="/app/img/{{p.img}}" alt="icon">
+            <h4 class="list-group-item-heading">{{p.first}} {{p.last}}</h4>
+            <p class="list-group-item-text">{{p.blurb}}</p>
         </div>
     </div>
 </div>
 
-<div class="col-lg-12">
-    <div class="page-header">
-        <h1 id="container">Containers</h1>
-    </div>
-    <div class="bs-component">
-        <div class="jumbotron">
-            <h1>Jumbotron</h1>
-            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <p><a class="btn btn-primary btn-lg">Learn more</a></p>
-        </div>
-    </div>
-</div>
 
-<friend-info-card user="user1"></friend-info-card>
-<friend-info-card user="user2"></friend-info-card>
+<script>
+    // TODO: Put Masonry into the Bower build
+    // Load is used to ensure all images have been loaded, impossible with document
+    jQuery(window).load(function () {
+        setTimeout(function(){
+            // Takes the gutter width from the bottom margin of .post
+            var gutter = parseInt(jQuery('.post').css('marginBottom'));
+            var container = jQuery('#posts');
 
+            // Creates an instance of Masonry on #posts
+            container.masonry({
+                gutter: gutter,
+                itemSelector: '.post',
+                columnWidth: '.post'
+            });
 
+            // This code fires every time a user resizes the screen and only affects .post elements
+            // whose parent class isn't .container. Triggers resize first so nothing looks weird.
+            jQuery(window).bind('resize', function () {
+                if (!jQuery('#posts').parent().hasClass('container')) {
+                    // Resets all widths to 'auto' to sterilize calculations
+                    post_width = jQuery('.post').width() + gutter;
+                    jQuery('#posts, body > #grid').css('width', 'auto');
+                    // Calculates how many .post elements will actually fit per row. Could this code be cleaner?
+                    posts_per_row = jQuery('#posts').innerWidth() / post_width;
+                    floor_posts_width = (Math.floor(posts_per_row) * post_width) - gutter;
+                    ceil_posts_width = (Math.ceil(posts_per_row) * post_width) - gutter;
+                    posts_width = (ceil_posts_width > jQuery('#posts').innerWidth()) ? floor_posts_width : ceil_posts_width;
+                    if (posts_width == jQuery('.post').width()) {
+                        posts_width = '100%';
+                    }
+                    // Ensures that all top-level elements have equal width and stay centered
+                    jQuery('#posts, #grid').css('width', posts_width);
+                    jQuery('#grid').css({'margin': '0 auto'});
+                }
 
-<div class="col-lg-4">
-    <div class="bs-component">
-
-        <div class="list-group">
-            <div class="list-group-item">
-                <div class="row-picture">
-                    <img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">
-                </div>
-                <div class="row-content">
-                    <h4 class="list-group-item-heading">Tile with avatar</h4>
-                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus</p>
-                </div>
-            </div>
-            <div class="list-group-separator"></div>
-            <div class="list-group-item">
-                <div class="row-picture">
-                    <img class="circle" src="http://lorempixel.com/56/56/people/6" alt="icon">
-                </div>
-                <div class="row-content">
-                    <h4 class="list-group-item-heading">Tile with another avatar</h4>
-                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
-                </div>
-            </div>
-            <div class="list-group-separator"></div>
-            <div class="list-group-item">
-                <div class="row-action-primary checkbox">
-                    <label><input type="checkbox"><span class="checkbox-material"><span class="check"></span></span></label>
-                </div>
-                <div class="row-content">
-                    <h4 class="list-group-item-heading">Tile with a checkbox in it</h4>
-                    <p class="list-group-item-text">Donec id elit non mi risus varius blandit.</p>
-                </div>
-            </div>
-            <div class="list-group-separator"></div>
-        </div>
-        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
-</div>
+            }).trigger('resize');
+        },400);
+    });
+</script>
