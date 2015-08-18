@@ -46,18 +46,15 @@
 
         function addUser(newUser) {
             var lsData = JSON.parse(localStorage.getItem('peoples')); //TODO: Don't refresh view... just push
-            //var lsDataLength1 = lsData.people.length;
-            //alert(lsDataLength1);
 
             lsData.people.unshift(newUser);
-            //var lsDataLength2 = lsData.people.length;
-            //alert(lsDataLength2);
 
             // Put the object back into storage
             localStorage.setItem('peoples', JSON.stringify(lsData));
+
             // Refresh the view with the local storage object
             vm.personsData = lsData;
-            lsData = {};
+
             // Masonry repaint
             masonry();
             resetForm();
@@ -68,10 +65,61 @@
 
         }
 
-        /* Collapsed */
-        //$scope.collapse = function(){
-        //    $scope.collapsed = !$scope.collapsed
-        //}
+
+        $scope.countCats = function(item){
+        //function countCats(item){
+
+            console.log(item);
+            function myFunction(){
+                var catFlag, flag1, flag2, flag3;
+                catCount++;
+                var cats = [];
+
+                if(catCount == 1){
+
+                    if(catCount < 0){
+                        cats.push('catsID')
+                    }
+
+
+
+                    // check if 1 has happened before
+                    // if 1 hasn't happened set flag that one was clicked
+                    //catFlag = true;
+                    //alert('1 clicked for the first time')
+
+                    //catFlag = false;
+                    // make the friendship
+                    //alert('1 clicked for the second time MAKE FRIENDS!')
+
+
+
+                } else if(catCount == 2) {
+                    // clicked on the same one
+                    alert('the same one has been clicked 2 times')
+                    // close all divs
+
+                    // reset count
+                    catCount = 0;
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+            myFunction();
+
+
+        };
 
         function masonry() { //FIXME: Masonry not refreshing on new paint
             // TODO: Put Masonry into the Bower build
