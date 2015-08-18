@@ -21,6 +21,7 @@
         vm.init = init;
         vm.addUser = addUser;
         vm.resetForm = resetForm;
+        var catArray = [];
 
         init();
 
@@ -67,57 +68,27 @@
 
 
         $scope.countCats = function(item){
-        //function countCats(item){
+            var lsData, myObject, cat, fName, cat1, storedNames;
 
-            console.log(item);
-            function myFunction(){
-                var catFlag, flag1, flag2, flag3;
-                catCount++;
-                var cats = [];
+            lsData = localStorage.getItem('peoples');
+            console.log('retrievedObject: ', JSON.parse(lsData));
+            myObject = JSON.parse(lsData);
+            cat1 = myObject.people[item];
+            cat = myObject.people[item];
+            fName = cat.first;
 
-                if(catCount == 1){
+            catArray.push(fName);
+            localStorage['catArray'] = JSON.stringify(catArray);
 
-                    if(catCount < 0){
-                        cats.push('catsID')
-                    }
+            storedNames = JSON.parse(localStorage['catArray']);
 
+            if(storedNames.length >= 2){
+                //cat1.push(catArray[1]);
+                localStorage.removeItem('catArray')
 
-
-                    // check if 1 has happened before
-                    // if 1 hasn't happened set flag that one was clicked
-                    //catFlag = true;
-                    //alert('1 clicked for the first time')
-
-                    //catFlag = false;
-                    // make the friendship
-                    //alert('1 clicked for the second time MAKE FRIENDS!')
-
-
-
-                } else if(catCount == 2) {
-                    // clicked on the same one
-                    alert('the same one has been clicked 2 times')
-                    // close all divs
-
-                    // reset count
-                    catCount = 0;
-
-                }
-
-
-
-
-
-
-
-
-
-
-
+            } else {
 
             }
-            myFunction();
-
 
         };
 

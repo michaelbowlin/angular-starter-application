@@ -2,7 +2,7 @@
 <header id="header" class="container">
     <h1>Friendship Tracker</h1>
     <!--<p class="lead">-->
-        <!--This is deployed with the <code>#grid</code> div fluid (that is, it has no Bootstrap <code>.container</code> class). To make it fixed simply add the <code>.container</code> class to it. Use the media queries in <strong>style.css</strong> to change the grid's post widths and margins.-->
+    <!--This is deployed with the <code>#grid</code> div fluid (that is, it has no Bootstrap <code>.container</code> class). To make it fixed simply add the <code>.container</code> class to it. Use the media queries in <strong>style.css</strong> to change the grid's post widths and margins.-->
     <!--</p>-->
     <hr>
 </header>
@@ -41,62 +41,62 @@
                 <br/>
                 <br/>
                 <div class="form-group">
-                            <label class="col-lg-2 control-label"></label>
-                            <div class="col-lg-10 offset-2">
-                                <div class="radio radio-primary col-lg-3 pull-left" required>
-                                    <label>
-                                        <div class="panel panel-primary">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">Mouse #1</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                <img src="/app/img/mouse1.jpg" alt=""/>
-                                                <input type="radio" value="mouse1.jpg" checked="" ng-model="user.img"><span class="circle"></span><span class="check"></span>
-                                            </div>
-                                        </div>
-                                    </label>
+                    <label class="col-lg-2 control-label"></label>
+                    <div class="col-lg-10 offset-2">
+                        <div class="radio radio-primary col-lg-3 pull-left" required>
+                            <label>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Mouse #1</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <img src="/app/img/mouse1.jpg" alt=""/>
+                                        <input type="radio" value="mouse1.jpg" checked="" ng-model="user.img"><span class="circle"></span><span class="check"></span>
+                                    </div>
                                 </div>
-                                <div class="radio radio-primary col-lg-3 pull-left">
-                                    <label>
-                                        <div class="panel panel-success">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">Mouse #2</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                <img src="/app/img/mouse2.jpg" alt=""/>
-                                                <input type="radio" value="mouse2.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="radio radio-primary col-lg-3 pull-left">
-                                    <label>
-                                        <div class="panel panel-info">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">Mouse #3</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                <img src="/app/img/mouse3.jpg" alt=""/>
-                                                <input type="radio" value="mouse3.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="radio radio-primary col-lg-3 pull-left">
-                                    <label>
-                                        <div class="panel panel-warning">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">Mouse #4</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                <img src="/app/img/mouse4.jpg" alt=""/>
-                                                <input type="radio" value="mouse4.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
+                            </label>
                         </div>
+                        <div class="radio radio-primary col-lg-3 pull-left">
+                            <label>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Mouse #2</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <img src="/app/img/mouse2.jpg" alt=""/>
+                                        <input type="radio" value="mouse2.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="radio radio-primary col-lg-3 pull-left">
+                            <label>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Mouse #3</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <img src="/app/img/mouse3.jpg" alt=""/>
+                                        <input type="radio" value="mouse3.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="radio radio-primary col-lg-3 pull-left">
+                            <label>
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Mouse #4</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <img src="/app/img/mouse4.jpg" alt=""/>
+                                        <input type="radio" value="mouse4.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
@@ -115,7 +115,6 @@
     <div id="grid">
         <div id="posts">
             <div class="post" ng-repeat="p in vm.personsData.people track by $index">
-                <!--<friend-button></friend-button>-->
                 <a href ng-click="goCats = !goCats; countCats($index)" class="btn btn-primary btn-lg">Toggle Cats</a>
 
                 <div class="col-xs-6">
