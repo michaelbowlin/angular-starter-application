@@ -62,20 +62,14 @@
         }
 
         $scope.countCats = function(item) {
-            var lsData, myObject, cat, fName, cat1, storedNames;
+            var lsData, myObject, cat, fName, cat1, storedNames, lsFriend;
 
             lsData = localStorage.getItem('peoples');
             myObject = JSON.parse(lsData);
-            cat1 = myObject.people[item]; //***
+            cat1 = myObject.people[item];
             cat = myObject.people[item];
             fName = cat.first;
 
-            // loop through lsData
-            //
-            //for(var i = 0; myObject.length > i; i++){
-            //    console.log('-----> ' + myObject[i]);
-            //}
-            // find a matching usr#
 
             // put cat array in LS
             catArray.push(fName);
@@ -85,58 +79,23 @@
             if (storedNames.length >= 2) {
 
                 //alert(fName);
-                //refreshFriends(fName,lsData);
-                //
-                //var test = myObject.people;
-                //test[item].friends.push(fName);
-                //
-                //delete test[item];
-                //delete myObject.people[item];
-                //var replacedItem = myObject.people[item];
-                //replacedItem.push(cat1);
-                //vm.personsData = test;
-                //
-                //
-                //var pepArray = myObject.people.friends;
-                //var newFriend = "storedNames[1]";
-                //pepArray.push(newFriend);
-                //
-                //var test2 = vm.personsData.people;
-                //var friendsAr = test2.friends;
-                //console.log(friendsAr);
-                //friendsAr.push(test2);
+
+                /**
+                *
+                *   Left off here -- *** Had to put on hold due to excessive hours at my Job.
+                *
+                *
+                 */
 
 
+                vm.personsData.people[item].append();
 
-                //localStorage.setItem('peoples', JSON.stringify(test2));
-
-
-
-                // splice complimentary object from LS
-
-                // push friend into localstorage
-                //cat1.friends.push(catArray[1]);
-                //lsData.push(cat1)
-                //var a = JSON.parse(localStorage.getItem('peoples'));
-                //a.push(lsData);
-                //localStorage.setItem('peoples', JSON.stringify(lsData));
-
-                refreshFriends(fName,myObject,cat1,item);
+                myObject.people.friends(fName);
 
                 localStorage.removeItem('catArray');
 
             }
         };
-
-        function refreshFriends(fName, myObject, cat1, item){
-
-            //myObject.push(people);
-            //delete myObject.people[item];
-            myObject.people.friends.push(fName);
-
-            console.log(newObj);
-            m.personsData = newOne;
-        }
     }
 
 })();
