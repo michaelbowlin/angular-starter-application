@@ -116,7 +116,7 @@
         <div id="posts">
             <div class="post" ng-repeat="p in vm.personsData.people track by $index">
                 <!--<friend-button></friend-button>-->
-                <a href ng-click="goCats = !goCats; countCats(vm.personsData.people)" class="btn btn-primary btn-lg">Toggle Cats</a>
+                <a href ng-click="goCats = !goCats; countCats($index)" class="btn btn-primary btn-lg">Toggle Cats</a>
 
                 <div class="col-xs-6">
                     <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" class="img-responsive img-thumbnail" ng-show="goCats && !twoCats">
