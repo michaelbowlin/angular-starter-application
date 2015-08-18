@@ -68,27 +68,22 @@
             myObject = JSON.parse(lsData);
             cat1 = myObject.people[item];
             cat = myObject.people[item];
-            fName = cat.first;
+            //fName = cat.first;
 
 
             // put cat array in LS
-            catArray.push(fName);
+            //catArray.push(fName);
+            catArray.push(cat);
             localStorage['catArray'] = JSON.stringify(catArray);
             storedNames = JSON.parse(localStorage['catArray']);
 
             if (storedNames.length >= 2) {
 
-                //alert(fName);
-
-                /**
-                *
-                *   Left off here -- *** Had to put on hold due to excessive hours at my Job.
-                *
-                *
-                 */
+                //console.log(fName);
 
 
-                vm.personsData.people[item].append();
+
+                vm.personsData.people[0].friends.push(cat.first);
 
                 myObject.people.friends(fName);
 

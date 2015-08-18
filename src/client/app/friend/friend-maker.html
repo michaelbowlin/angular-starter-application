@@ -1,7 +1,7 @@
-<br/><br/>
+<br/><br/><br/>
 <!-- Header -->
 <header id="header" class="container">
-    <h1>Friendship Tracker</h1>
+    <h1>Networking POC</h1>
     <hr>
 </header>
 
@@ -45,11 +45,11 @@
                             <label>
                                 <div class="panel panel-primary">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">Mouse #1</h3>
+                                        <h3 class="panel-title">Test User #1</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <img src="/app/img/mouse1.jpg" alt=""/>
-                                        <input type="radio" value="mouse1.jpg" checked="" ng-model="user.img"><span class="circle"></span><span class="check"></span>
+                                        <img src="/app/img/user8.jpg" alt=""/>
+                                        <input type="radio" value="user8.jpg" checked="" ng-model="user.img"><span class="circle"></span><span class="check"></span>
                                     </div>
                                 </div>
                             </label>
@@ -58,11 +58,11 @@
                             <label>
                                 <div class="panel panel-success">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">Mouse #2</h3>
+                                        <h3 class="panel-title">Test User #2</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <img src="/app/img/mouse2.jpg" alt=""/>
-                                        <input type="radio" value="mouse2.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
+                                        <img src="/app/img/user9.jpeg" alt=""/>
+                                        <input type="radio" value="user9.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
                                     </div>
                                 </div>
                             </label>
@@ -71,11 +71,11 @@
                             <label>
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">Mouse #3</h3>
+                                        <h3 class="panel-title">Test User #3</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <img src="/app/img/mouse3.jpg" alt=""/>
-                                        <input type="radio" value="mouse3.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
+                                        <img src="/app/img/user10.jpg" alt=""/>
+                                        <input type="radio" value="user10.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
                                     </div>
                                 </div>
                             </label>
@@ -84,11 +84,11 @@
                             <label>
                                 <div class="panel panel-warning">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">Mouse #4</h3>
+                                        <h3 class="panel-title">Test User #4</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <img src="/app/img/mouse4.jpg" alt=""/>
-                                        <input type="radio" value="mouse4.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
+                                        <img src="/app/img/user11.jpg" alt=""/>
+                                        <input type="radio" value="user11.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
                                     </div>
                                 </div>
                             </label>
@@ -114,7 +114,7 @@
         <div class="row-content">
             <div class="col-xs-5">
                 <div class="row-picture">
-                    <img class="circle" src="/app/img/{{p.img}}" width="200px" height="auto" alt="icon" style="height:270px;width:auto;border-radius:200px;">
+                    <img class="circle" src="/app/img/{{p.img}}" width="80px" height="auto" alt="icon" style="height:80px;width:auto;border-radius:200px;">
                 </div>
             </div>
             <div class="col-xs-7">
@@ -122,7 +122,7 @@
                     <h2 class="list-group-item-heading">{{p.first}}</h2>
                     <p class="list-group-item-text">{{p.blurb}}</p>
                     <p></p>
-                    <a href ng-click="goCats = !goCats; countCats($index)" class="btn btn-success btn-lg">Make Friends</a>
+                    <a href ng-click="goUsers = !goUsers; countCats($index)" class="btn btn-success btn-lg">Connect</a>
                     <p></p>
                     <collapsed-panels></collapsed-panels>
                     <!--<div class="col-xs-6">-->

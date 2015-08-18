@@ -11,51 +11,51 @@
                     var persons = {
                         people: [
                             {
-                                first : 'Dr. Repeater',
-                                img : 'cat2.jpg',
-                                blurb : 'I like mice, yarn and boxes.',
+                                first : 'Kate Bridger',
+                                img : 'user1.jpg',
+                                blurb : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu semper leo. Integer placerat gravida nibh, sagittis porttitor elit porta eu. ',
                                 friends: []
                             },
                             {
-                                first : 'The Infamous Loop',
-                                img : 'cat3.jpg',
-                                blurb : 'I like mice, yarn and boxes.',
+                                first : 'William Thompson',
+                                img : 'user2.jpg',
+                                blurb : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu semper leo. Integer placerat gravida nibh, sagittis porttitor elit porta eu. ',
                                 friends: []
                             },
                             {
-                                first : 'RePurrsion',
-                                img : 'cat4.jpg',
-                                blurb : 'I like mice, yarn and boxes.',
+                                first : 'Marcus Milo',
+                                img : 'user3.jpg',
+                                blurb : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu semper leo. Integer placerat gravida nibh, sagittis porttitor elit porta eu. ',
                                 friends: []
                             },
                             {
-                                first : 'Mr. Var',
-                                img : 'cat9.jpg',
-                                blurb : 'I like mice, yarn and boxes.',
+                                first : 'Grant Forester',
+                                img : 'user4.jpg',
+                                blurb : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu semper leo. Integer placerat gravida nibh, sagittis porttitor elit porta eu. ',
                                 friends: []
                             },
                             {
-                                first : 'Miss Closure',
-                                img : 'cat8.jpg',
-                                blurb : 'I like mice, yarn and boxes.',
+                                first : 'Missy Kuhns',
+                                img : 'user5.jpg',
+                                blurb : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu semper leo. Integer placerat gravida nibh, sagittis porttitor elit porta eu. ',
                                 friends: []
                             },
                             {
-                                first : 'Temporal Dead Zone',
-                                img : 'cat7.jpg',
-                                blurb : 'I like mice, yarn and boxes.',
+                                first : 'Gabe Madison',
+                                img : 'user6.jpg',
+                                blurb : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu semper leo. Integer placerat gravida nibh, sagittis porttitor elit porta eu. ',
                                 friends: []
                             },
                             {
-                                first : 'Array-Bian',
-                                img : 'cat6.jpg',
-                                blurb : 'I like mice, yarn and boxes.',
+                                first : 'Harold Parker',
+                                img : 'user7.jpg',
+                                blurb : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu semper leo. Integer placerat gravida nibh, sagittis porttitor elit porta eu. ',
                                 friends: []
                             },
                             {
                                 first : 'Objectify Meow',
-                                img : 'cat5.jpg',
-                                blurb : 'I like mice, yarn and boxes.',
+                                img : 'user3.jpg',
+                                blurb : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu semper leo. Integer placerat gravida nibh, sagittis porttitor elit porta eu. ',
                                 friends: []
 
                             }
