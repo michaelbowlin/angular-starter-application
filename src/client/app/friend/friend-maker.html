@@ -7,7 +7,6 @@
 
 <!-- Form -->
 <div class="col-xs-12">
-    <br/><br/>
     <div class="well bs-component">
         <form class="form-horizontal" name="personForm" novalidate>
             <fieldset>
@@ -34,7 +33,7 @@
 
                 <div class="togglebutton col-lg-10 col-lg-offset-2">
                     <label>
-                        <input type="checkbox"><span class="toggle"></span> Choose Your Avatar
+                        <!--<input type="checkbox"><span class="toggle"></span>--> Choose Your Avatar
                     </label>
                 </div>
                 <br/>
@@ -109,6 +108,7 @@
     </div>
 </div>
 
+
 <div class="panel panel-default col-xs-6" ng-repeat="p in vm.personsData.people track by $index">
     <div class="panel-body">
         <div class="row-content">
@@ -123,6 +123,8 @@
                     <p class="list-group-item-text">{{p.blurb}}</p>
                     <p></p>
                     <a href ng-click="goCats = !goCats; countCats($index)" class="btn btn-success btn-lg">Make Friends</a>
+                    <p></p>
+                    <collapsed-panels></collapsed-panels>
                     <div class="col-xs-6">
                         <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" class="img-responsive img-thumbnail" ng-show="goCats">
 
@@ -134,5 +136,3 @@
         </div>
     </div>
 </div>
-
-

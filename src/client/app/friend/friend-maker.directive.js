@@ -71,10 +71,10 @@
             fName = cat.first;
 
             // loop through lsData
-
-            for(var i = 0; myObject.length > i; i++){
-                console.log('-----> ' + myObject[i]);
-            }
+            //
+            //for(var i = 0; myObject.length > i; i++){
+            //    console.log('-----> ' + myObject[i]);
+            //}
             // find a matching usr#
 
             // put cat array in LS
@@ -84,21 +84,59 @@
 
             if (storedNames.length >= 2) {
 
+                //alert(fName);
+                //refreshFriends(fName,lsData);
+                //
+                //var test = myObject.people;
+                //test[item].friends.push(fName);
+                //
+                //delete test[item];
+                //delete myObject.people[item];
+                //var replacedItem = myObject.people[item];
+                //replacedItem.push(cat1);
+                //vm.personsData = test;
+                //
+                //
+                //var pepArray = myObject.people.friends;
+                //var newFriend = "storedNames[1]";
+                //pepArray.push(newFriend);
+                //
+                //var test2 = vm.personsData.people;
+                //var friendsAr = test2.friends;
+                //console.log(friendsAr);
+                //friendsAr.push(test2);
+
+
+
+                //localStorage.setItem('peoples', JSON.stringify(test2));
+
 
 
                 // splice complimentary object from LS
 
                 // push friend into localstorage
-                cat1.friends.push(catArray[1]);
+                //cat1.friends.push(catArray[1]);
                 //lsData.push(cat1)
                 //var a = JSON.parse(localStorage.getItem('peoples'));
                 //a.push(lsData);
-                localStorage.setItem('peoples', JSON.stringify(lsData));
+                //localStorage.setItem('peoples', JSON.stringify(lsData));
+
+                refreshFriends(fName,myObject,cat1,item);
 
                 localStorage.removeItem('catArray');
 
             }
         };
+
+        function refreshFriends(fName, myObject, cat1, item){
+
+            //myObject.push(people);
+            //delete myObject.people[item];
+            myObject.people.friends.push(fName);
+
+            console.log(newObj);
+            m.personsData = newOne;
+        }
     }
 
 })();
