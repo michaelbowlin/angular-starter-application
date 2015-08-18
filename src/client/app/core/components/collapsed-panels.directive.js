@@ -1,17 +1,17 @@
-(function(){
+(function() {
     'use strict';
 
     angular
         .module('app.core')
         .directive('collapsedPanels', collapsedPanels);
 
-    function collapsedPanels(){
+    function collapsedPanels() {
         return {
             restrict: 'E',
             templateUrl: 'app/core/components/collapsed-panels.html',
             controllerAs: 'vm',
             controller: collapsedPanelController
-        }
+        };
     }
 
     /* @ngInject */
@@ -21,15 +21,15 @@
         vm.init = init;
         init();
 
-        function init(){
-            //alert('asdf');
+        function init() {
+
         }
 
         /* Collapsed */
-        $scope.collapse = function(){
-            $scope.collapsed = !$scope.collapsed
-        }
+        $scope.collapse = function() {
+            $scope.collapsed = !$scope.collapsed;
+        };
 
-    };
+    }
 
 })();
