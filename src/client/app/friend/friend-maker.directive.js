@@ -39,8 +39,6 @@
 
                     // First pull the data from the service
                     vm.personsData = data;
-                    // Masonry paint
-                    masonry();
 
                 });
         }
@@ -56,8 +54,6 @@
             // Refresh the view with the local storage object
             vm.personsData = lsData;
 
-            // Masonry repaint
-            masonry();
             resetForm();
         }
 
@@ -69,66 +65,40 @@
             var lsData, myObject, cat, fName, cat1, storedNames;
 
             lsData = localStorage.getItem('peoples');
-            console.log('retrievedObject: ', JSON.parse(lsData));
             myObject = JSON.parse(lsData);
-            cat1 = myObject.people[item];
+            cat1 = myObject.people[item]; //***
             cat = myObject.people[item];
             fName = cat.first;
 
+            // loop through lsData
+
+            for(var i = 0; myObject.length > i; i++){
+                console.log('-----> ' + myObject[i]);
+            }
+            // find a matching usr#
+
+            // put cat array in LS
             catArray.push(fName);
             localStorage['catArray'] = JSON.stringify(catArray);
-
             storedNames = JSON.parse(localStorage['catArray']);
 
             if (storedNames.length >= 2) {
-                //cat1.push(catArray[1]);
+
+
+
+                // splice complimentary object from LS
+
+                // push friend into localstorage
+                cat1.friends.push(catArray[1]);
+                //lsData.push(cat1)
+                //var a = JSON.parse(localStorage.getItem('peoples'));
+                //a.push(lsData);
+                localStorage.setItem('peoples', JSON.stringify(lsData));
+
                 localStorage.removeItem('catArray');
 
             }
         };
-
-        function masonry() { //FIXME: Masonry not refreshing on new paint
-            // TODO: Put Masonry into the Bower build
-            // Load is used to ensure all images have been loaded, impossible with document
-            //jQuery(window).load(function () {
-            //    setTimeout(function(){
-            //        // Takes the gutter width from the bottom margin of .post
-            //        var gutter = parseInt(jQuery('.post').css('marginBottom'));
-            //        var container = jQuery('#posts');
-            //
-            //        // Creates an instance of Masonry on #posts
-            //        container.masonry({
-            //            gutter: gutter,
-            //            itemSelector: '.post',
-            //            columnWidth: '.post'
-            //        });
-            //
-            //        // This code fires every time a user resizes the screen and only affects .post elements
-            //        // whose parent class isn't .container. Triggers resize first so nothing looks weird.
-            //        jQuery(window).bind('resize', function () {
-            //            if (!jQuery('#posts').parent().hasClass('container')) {
-            //                // Resets all widths to 'auto' to sterilize calculations
-            //                var post_width = jQuery('.post').width() + gutter;
-            //                jQuery('#posts, body > #grid').css('width', 'auto');
-            //                // Calculates how many .post elements will actually fit per row.
-            //                var posts_per_row = jQuery('#posts').innerWidth() / post_width;
-            //                var floor_posts_width = (Math.floor(posts_per_row) * post_width) - gutter;
-            //                var ceil_posts_width = (Math.ceil(posts_per_row) * post_width) - gutter;
-            //                var posts_width =
-            //                  (ceil_posts_width >
-            //                      jQuery('#posts').innerWidth()) ? floor_posts_width : ceil_posts_width;
-            //                if (posts_width == jQuery('.post').width()) {
-            //                    posts_width = '100%';
-            //                }
-            //                // Ensures that all top-level elements have equal width and stay centered
-            //                jQuery('#posts, #grid').css('width', posts_width);
-            //                jQuery('#grid').css({'margin': '0 auto'});
-            //            }
-            //
-            //        }).trigger('resize');
-            //    },1000);
-            //});
-        }
     }
 
 })();

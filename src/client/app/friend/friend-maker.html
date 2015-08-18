@@ -1,14 +1,13 @@
+<br/><br/>
 <!-- Header -->
 <header id="header" class="container">
     <h1>Friendship Tracker</h1>
-    <!--<p class="lead">-->
-    <!--This is deployed with the <code>#grid</code> div fluid (that is, it has no Bootstrap <code>.container</code> class). To make it fixed simply add the <code>.container</code> class to it. Use the media queries in <strong>style.css</strong> to change the grid's post widths and margins.-->
-    <!--</p>-->
     <hr>
 </header>
 
 <!-- Form -->
 <div class="col-xs-12">
+    <br/><br/>
     <div class="well bs-component">
         <form class="form-horizontal" name="personForm" novalidate>
             <fieldset>
@@ -110,32 +109,30 @@
     </div>
 </div>
 
-<!-- Grid -->
-<div class="col-xs-12">
-    <div id="grid">
-        <div id="posts">
-            <div class="post" ng-repeat="p in vm.personsData.people track by $index">
-                <a href ng-click="goCats = !goCats; countCats($index)" class="btn btn-primary btn-lg">Toggle Cats</a>
-
-                <div class="col-xs-6">
-                    <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" class="img-responsive img-thumbnail" ng-show="goCats && !twoCats">
+<div class="panel panel-default col-xs-6" ng-repeat="p in vm.personsData.people track by $index">
+    <div class="panel-body">
+        <div class="row-content">
+            <div class="col-xs-5">
+                <div class="row-picture">
+                    <img class="circle" src="/app/img/{{p.img}}" width="200px" height="auto" alt="icon" style="height:270px;width:auto;border-radius:200px;">
                 </div>
-
-                <div class="col-xs-6">
-                    <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" class="img-responsive img-thumbnail" ng-show="goCats">
-                </div>
-                <img class="circle" src="/app/img/{{p.img}}" alt="icon">
-                <h4 class="list-group-item-heading">{{p.first}}</h4>
-                <p class="list-group-item-text">{{p.blurb}}</p>
-
-                <a href="javascript:void(0)" class="btn btn-success btn-fab btn-raised pull-right"><div class="ripple-wrapper"><i class="fa fa-star"></i><small>Make Friends</small></div></a>
-                <collapsed-panels></collapsed-panels>
             </div>
+            <div class="col-xs-7">
+                <div class="-well pull-right">
+                    <h2 class="list-group-item-heading">{{p.first}}</h2>
+                    <p class="list-group-item-text">{{p.blurb}}</p>
+                    <p></p>
+                    <a href ng-click="goCats = !goCats; countCats($index)" class="btn btn-success btn-lg">Make Friends</a>
+                    <div class="col-xs-6">
+                        <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" class="img-responsive img-thumbnail" ng-show="goCats">
 
+                        <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" class="img-responsive img-thumbnail" ng-show="goCats && !twoCats">
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
 
-<script>
 
-</script>
