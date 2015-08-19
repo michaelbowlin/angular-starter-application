@@ -72,7 +72,6 @@
 
             // put cat array in sessionStorage
             userArray.push(cat);
-            //sessionStorage['userArray'] = JSON.stringify(userArray);
             sessionStorage.setItem('userArray', JSON.stringify(userArray));
             storedNames = JSON.parse(sessionStorage['userArray']);
 
@@ -89,8 +88,6 @@
                     // rebuild key w/ only 1 name
                     sessionStorage.setItem('userArray', JSON.stringify(cat));
                 } else if (name1 !== name2) {
-                    //vm.personsData.people[firstClicked].friends.push(name2);
-                    //vm.personsData.people[0].friends.push(name2);
                     firstClicked.friends.push(name2);
                 }
 
@@ -105,62 +102,6 @@
                 // store first clicked
                 firstClicked = vm.personsData.people[item];
             }
-
-
-
-            //localStorage.setItem('userArray', JSON.stringify(cat));
-
-
-
-                // ------------------
-
-
-                // if 2
-
-
-
-                    // push into 1
-
-                // -----------------
-
-                // if >= 2
-
-                    // reset
-
-
-
-
-
-            //$scope.countCats = function(item) {
-            //    var lsData, myObject, cat, storedNames;
-            //
-            //    lsData = localStorage.getItem('peoples');
-            //    myObject = JSON.parse(lsData);
-            //    cat = myObject.people[item];
-            //
-            //    // put cat array in LocalStorage
-            //    catArray.push(cat);
-            //    localStorage['catArray'] = JSON.stringify(catArray);
-            //    storedNames = JSON.parse(localStorage['catArray']);
-            //
-            //    if (storedNames.length == 2) {
-            //
-            //        vm.personsData.people[item].friends.push(cat.first);
-            //
-            //        localStorage.removeItem('catArray');
-            //
-            //    } else if (storedNames.length > 2) {
-            //
-            //        var item = vm.personsData.people[item];
-            //        alert(item);
-            //
-            //    }
-            //
-            //};
-
-
-
-
         };
     }
 

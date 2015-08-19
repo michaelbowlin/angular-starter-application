@@ -61,7 +61,7 @@
                                         <h3 class="panel-title">Test User #2</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <img src="/app/img/user9.jpeg" width="90%" height="90%" alt=""/>
+                                        <img src="/app/img/user9.jpg" width="90%" height="90%" alt=""/>
                                         <input type="radio" value="user9.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@
 </div>
 
 
-<div class="panel panel-default col-xs-6" ng-repeat="p in vm.personsData.people track by $index">
+<div class="panel panel-default col-xs-6" ng-repeat="p in vm.personsData.people track by $index" style="height:240px;overflow: hidden;">
     <div class="panel-body">
         <div class="row-content">
             <div class="col-xs-5">
