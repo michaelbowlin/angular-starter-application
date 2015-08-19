@@ -53,7 +53,7 @@
                                 friends: []
                             },
                             {
-                                first : 'Objectify Meow',
+                                first : 'Jacob Praisley',
                                 img : 'user3.jpg',
                                 blurb : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu semper leo. Integer placerat gravida nibh, sagittis porttitor elit porta eu. ',
                                 friends: []

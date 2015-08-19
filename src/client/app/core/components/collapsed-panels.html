@@ -1,7 +1,6 @@
 <div class="panel">
-    <div class="panel-heading ng-binding" ng-click="collapse()">Show Friends</div>
-    <div class="panel-body" ng-hide="!collapsed">
-        <h4 class="pull-left">Friends:</h4>
+    <div class="panel-heading ng-binding" ng-show="content" ng-click="collapse()">Connections</div>
+    <div class="panel-body" ng-hide="collapsed">
         <div class="col-xs-12">
             <div class="list-group" ng-repeat="f in p.friends  track by $index">
                 <div class="list-group-item">
@@ -9,7 +8,7 @@
                         <!--<img class="circle" src="/app/img/{{p.img}}" alt="icon">-->
                     </div>
                     <div class="row-content">
-                        <h6 class="list-group-item-heading">{{f}}</h6>
+                        <p class="list-group-item-heading">{{f}}</p>
                     </div>
                 </div>
                 <div class="list-group-separator"></div>

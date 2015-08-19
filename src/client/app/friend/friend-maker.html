@@ -48,7 +48,7 @@
                                         <h3 class="panel-title">Test User #1</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <img src="/app/img/user8.jpg" alt=""/>
+                                        <img src="/app/img/user8.jpg" width="90%" height="90%" alt=""/>
                                         <input type="radio" value="user8.jpg" checked="" ng-model="user.img"><span class="circle"></span><span class="check"></span>
                                     </div>
                                 </div>
@@ -61,7 +61,7 @@
                                         <h3 class="panel-title">Test User #2</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <img src="/app/img/user9.jpeg" alt=""/>
+                                        <img src="/app/img/user9.jpeg" width="90%" height="90%" alt=""/>
                                         <input type="radio" value="user9.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                                         <h3 class="panel-title">Test User #3</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <img src="/app/img/user10.jpg" alt=""/>
+                                        <img src="/app/img/user10.jpg" width="90%" height="90%" alt=""/>
                                         <input type="radio" value="user10.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
                                         <h3 class="panel-title">Test User #4</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <img src="/app/img/user11.jpg" alt=""/>
+                                        <img src="/app/img/user11.jpg" width="90%" height="90%" alt=""/>
                                         <input type="radio" value="user11.jpg" ng-model="user.img"><span class="circle"></span><span class="check"></span>
                                     </div>
                                 </div>
@@ -116,6 +116,8 @@
                 <div class="row-picture">
                     <img class="circle" src="/app/img/{{p.img}}" width="80px" height="auto" alt="icon" style="height:80px;width:auto;border-radius:200px;">
                 </div>
+                <collapsed-panels></collapsed-panels>
+
             </div>
             <div class="col-xs-7">
                 <div class="-well pull-right">
@@ -124,7 +126,6 @@
                     <p></p>
                     <a href ng-click="goUsers = !goUsers; countCats($index)" class="btn btn-success btn-lg">Connect</a>
                     <p></p>
-                    <collapsed-panels></collapsed-panels>
                     <!--<div class="col-xs-6">-->
                         <!--<img ng-src="http://i.imgur.com/vkW3Lhe.jpg" class="img-responsive img-thumbnail" ng-show="goCats">-->
 

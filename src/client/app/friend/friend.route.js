@@ -15,12 +15,12 @@
             {
                 state: 'friend',
                 config: {
-                    url: '/',
+                    url: '/connections',
                     template: '<friend-maker></friend-maker>',
                     title: 'friend',
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-user"></i><span> Friend</span>'
+                        content: '<i class="fa fa-user"></i><span> Connections</span>'
                     }
                 }
             }

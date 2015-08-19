@@ -21,7 +21,7 @@
         vm.init = init;
         vm.addUser = addUser;
         vm.resetForm = resetForm;
-        var catArray = [];
+        var userArray = [];
 
         init();
 
@@ -62,34 +62,110 @@
         }
 
         $scope.countCats = function(item) {
-            var lsData, myObject, cat, fName, cat1, storedNames, lsFriend;
+            var lsData, myObject, cat, storedNames, name1, name2;
 
             lsData = localStorage.getItem('peoples');
+
             myObject = JSON.parse(lsData);
-            cat1 = myObject.people[item];
             cat = myObject.people[item];
-            //fName = cat.first;
 
+            // put cat array in sessionStorage
+            userArray.push(cat);
+            //sessionStorage['userArray'] = JSON.stringify(userArray);
+            sessionStorage.setItem('userArray', JSON.stringify(userArray));
+            storedNames = JSON.parse(sessionStorage['userArray']);
 
-            // put cat array in LS
-            //catArray.push(fName);
-            catArray.push(cat);
-            localStorage['catArray'] = JSON.stringify(catArray);
-            storedNames = JSON.parse(localStorage['catArray']);
-
-            if (storedNames.length >= 2) {
-
-                //console.log(fName);
-
-
-
-                vm.personsData.people[0].friends.push(cat.first);
-
-                myObject.people.friends(fName);
-
-                localStorage.removeItem('catArray');
-
+            if(storedNames[0].first){
+                name1 = storedNames[0].first;
             }
+            //if (storedNames[1].first || storedNames[1].first !== undefined || storedNames[1].first !== null || typeof storedNames[1].first !== 'undefined') {
+            //
+            //}
+
+            if(storedNames.length == 2){
+                name2 = storedNames[1].first;
+
+                if(name1 === name2){
+                    alert('Same');
+                    // if 1 -- Makes sure that if same user is clicked twice LS doesn't populate duplicates
+                    // LS Set
+                    // delete entire key
+                    sessionStorage.removeItem('userArray');
+                    // rebuild key w/ only 1 name
+                    sessionStorage.setItem('userArray', JSON.stringify(cat));
+                } else if (name1 !== name2) {
+                    // if 1 X2+
+                    // !LS Set -- push into LS array if the object is different
+
+                    // grab 'first' of LS[1]
+                    //var secondName = sessionStorage.getItem('userArray', name2);
+                    vm.personsData.people[0].friends.push(name2);
+                }
+
+                //alert(storedNames.length);
+                if(storedNames.length >= 2){
+                    // delete entire key
+                    sessionStorage.removeItem('userArray');
+                }
+            } else {
+                console.log('asdf');
+            }
+
+
+
+            //localStorage.setItem('userArray', JSON.stringify(cat));
+
+
+
+                // ------------------
+
+
+                // if 2
+
+
+
+                    // push into 1
+
+                // -----------------
+
+                // if >= 2
+
+                    // reset
+
+
+
+
+
+            //$scope.countCats = function(item) {
+            //    var lsData, myObject, cat, storedNames;
+            //
+            //    lsData = localStorage.getItem('peoples');
+            //    myObject = JSON.parse(lsData);
+            //    cat = myObject.people[item];
+            //
+            //    // put cat array in LocalStorage
+            //    catArray.push(cat);
+            //    localStorage['catArray'] = JSON.stringify(catArray);
+            //    storedNames = JSON.parse(localStorage['catArray']);
+            //
+            //    if (storedNames.length == 2) {
+            //
+            //        vm.personsData.people[item].friends.push(cat.first);
+            //
+            //        localStorage.removeItem('catArray');
+            //
+            //    } else if (storedNames.length > 2) {
+            //
+            //        var item = vm.personsData.people[item];
+            //        alert(item);
+            //
+            //    }
+            //
+            //};
+
+
+
+
         };
     }
 
