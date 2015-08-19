@@ -22,6 +22,7 @@
         vm.addUser = addUser;
         vm.resetForm = resetForm;
         var userArray = [];
+        var firstClicked;
 
         init();
 
@@ -78,37 +79,31 @@
             if(storedNames[0].first){
                 name1 = storedNames[0].first;
             }
-            //if (storedNames[1].first || storedNames[1].first !== undefined || storedNames[1].first !== null || typeof storedNames[1].first !== 'undefined') {
-            //
-            //}
 
             if(storedNames.length == 2){
                 name2 = storedNames[1].first;
 
                 if(name1 === name2){
-                    alert('Same');
-                    // if 1 -- Makes sure that if same user is clicked twice LS doesn't populate duplicates
-                    // LS Set
                     // delete entire key
                     sessionStorage.removeItem('userArray');
                     // rebuild key w/ only 1 name
                     sessionStorage.setItem('userArray', JSON.stringify(cat));
                 } else if (name1 !== name2) {
-                    // if 1 X2+
-                    // !LS Set -- push into LS array if the object is different
-
-                    // grab 'first' of LS[1]
-                    //var secondName = sessionStorage.getItem('userArray', name2);
-                    vm.personsData.people[0].friends.push(name2);
+                    //vm.personsData.people[firstClicked].friends.push(name2);
+                    //vm.personsData.people[0].friends.push(name2);
+                    firstClicked.friends.push(name2);
                 }
 
                 //alert(storedNames.length);
                 if(storedNames.length >= 2){
+                    // clear user array
+                    userArray = [];
                     // delete entire key
-                    sessionStorage.removeItem('userArray');
+                    sessionStorage.clear();
                 }
-            } else {
-                console.log('asdf');
+            } else if(storedNames.length == 1){
+                // store first clicked
+                firstClicked = vm.personsData.people[item];
             }
 
 
